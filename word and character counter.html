@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>word counter</title>
+	<style>
+	#container{
+		border:1px solid black;
+		background-color:lightpink;
+		padding: 20px;
+		margin: 80px;
+		border-radius: 10px;
+
+
+	}
+	#textarea{
+
+	}
+	h1{
+		font-family: monospace;
+		background-color: yellow;
+		text-align: center;
+		margin: px;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="h1"><h1>----word and character counter----</h1></div>
+<textarea id="textarea" cols="140" rows="22" width="1500px" height="338px"></textarea>
+<div>
+  <p><spam id="word"> 0 </spam>word and  <spam id="character">0  </spam>character
+</p></div></div>
+
+<script>
+	let textarea=document.getElementById('textarea');
+	textarea.addEventListener('input',function (){
+		var text=this.value;
+		var char=text.length;
+		document.getElementById('character').innerHTML=char;
+
+         text=text.trim();
+
+		let words=text.split(' ');
+
+		 let clean=words.filter(function(e){
+		 	if (e !=" "|| ' ' ){
+		 		return e;
+		 	}
+		 });
+		 console.log(clean);
+		document.getElementById('word').innerHTML= clean.length;
+
+
+	});
+
+</script>
+</body>
+</html>
